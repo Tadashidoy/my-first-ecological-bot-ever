@@ -24,7 +24,7 @@ async def ayuda(ctx):
 async def tips(ctx):
     elements = "qwertyuiop"
     random.choice(elements)
-dictionary = {
+    dictionary = {
     "q": "Deposita los residuos en el contenedor correspondiente: Esta acción facilita que los residuos se incorporen antes a la cadena de reciclaje. Localiza la zona de contenedores más cercana a tu vivienda para hacer más fácil el proceso. Una vez separados, debes dejar los envases de plástico, latas y bricks en el contenedor amarillo; los papeles y cartones en el contenedor azul; y el vidrio en el contenedor verde. Para los residuos orgánicos, el contenedor marrón es el correcto, y para aquellos materiales con mezcla de residuos orgánicos como pueden ser pañales, algodones, etc., los contenedores grises son los adecuados.",
     "w": "Aprende qué hacer con los residuos especiales: Los residuos especiales como aparatos electrónicos o muebles se depositan en los puntos limpios. Las pilas y el aceite de cocina tienen sus contenedores específicos. Lo mismo ocurre con los medicamentos, que no puedes tirar a la basura por su toxicidad y que debes dejar en uno de los puntos SIGRE situados en algunas farmacias.",
     "e": "Recicla el aceite de cocina: Uno de los problemas habituales al reciclar en casa es qué hacer con el aceite usado. Este residuo debe depositarse en un contenedor especial y nunca tirarse por el inodoro o por la pila de la cocina. Un consejo para reciclar este aceite es almacenarlos en botes de vidrio que, una vez llenos, llevaremos a un punto de recogida.",
@@ -35,17 +35,7 @@ dictionary = {
     "i": "Lee las etiquetas y envases: La información sobre reciclaje disponible en etiquetas y envases es muy útil en los plásticos, que tienen un código especial que indica el material o mezcla de materiales utilizados en su fabricación. En algunos casos, la etiqueta también nos indica en qué contenedor debemos depositar un envase.",
     "o": "Separa los residuos en recipientes independientes: El primer paso para reciclar en casa es disponer de recipientes independientes para cada tipo de residuo. Esta acción es sencilla y facilita mucho la clasificación, aunque requiere espacio, un solo cubo con separadores es suficiente."
             }
-elements = "qwertyuiop"
-word = random.choice(elements)
-print(dictionary[word])
-@bot.command()
-async def tips(ctx):
-    listaMemes= os.listdir('image')
-    memeMostrar=random.choice(listaMemes)
-    with open(f'image/{memeMostrar}', 'rb') as f:
-        # ¡Vamos a almacenar el archivo de la biblioteca Discord convertido en esta variable!
-        picture = discord.File(f)
-    # A continuación, podemos enviar este archivo como parámetro.
-    await ctx.send(file=picture)
+    word = random.choice(elements)
+    await ctx.send(dictionary[word])
 
 bot.run()
